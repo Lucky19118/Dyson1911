@@ -7,878 +7,620 @@
 <title>Dyson1911 Store</title>
 
 <style>
-
-/* =========================
-   STYLE GÉNÉRAL
-========================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
-
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    background:
-        radial-gradient(circle at 15% 20%, rgba(212,175,55,0.14), transparent 28%),
-        radial-gradient(circle at 85% 10%, rgba(255,255,255,0.8), transparent 25%),
-        radial-gradient(circle at 80% 80%, rgba(212,175,55,0.10), transparent 30%),
-        #eee9df;
-
-    color: #202020;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f7f5f0;
+    color: #1d1d1b;
 }
 
-
-/* =========================
-   NAVIGATION
-========================= */
-
+/* HEADER */
 header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-
-    background: rgba(245,242,235,0.88);
-    backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid rgba(170,135,55,0.25);
-
-    padding: 18px 6%;
-
+    background: #f7f5f0;
+    border-bottom: 1px solid #ddd8ce;
+    padding: 22px 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .logo {
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 29px;
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    color: #171717;
+    font-size: 25px;
+    letter-spacing: 4px;
+    font-weight: bold;
 }
 
 .logo span {
-    color: #b08a32;
-}
-
-nav {
-    display: flex;
-    gap: 28px;
+    color: #a98b55;
 }
 
 nav a {
     text-decoration: none;
-
-    color: #333;
-
-    font-size: 11px;
-
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase;
-
-    transition: 0.3s;
+    color: #222;
+    margin-left: 28px;
+    font-size: 14px;
+    letter-spacing: 2px;
 }
 
-nav a:hover {
-    color: #b08a32;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
+/* HERO */
 .hero {
-    min-height: 580px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     text-align: center;
-
-    padding: 80px 20px;
-
-    position: relative;
-    overflow: hidden;
+    padding: 90px 20px 70px;
 }
 
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    border-radius: 50%;
-
-    background: rgba(190,150,65,0.12);
-
-    filter: blur(80px);
-
-    top: -180px;
-    left: -180px;
-}
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 450px;
-    height: 450px;
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,0.8);
-
-    filter: blur(90px);
-
-    right: -180px;
-    bottom: -180px;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-
-    max-width: 850px;
-}
-
-.hero-small {
-    color: #a47d27;
-
-    font-size: 11px;
-
+.hero small {
+    color: #a98b55;
     letter-spacing: 5px;
-
     text-transform: uppercase;
-
-    margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(55px, 9vw, 105px);
-
-    line-height: 0.85;
-
-    letter-spacing: 4px;
-
-    font-weight: 600;
-
-    color: #191919;
-
-    margin-bottom: 28px;
-}
-
-.hero h1 span {
-    color: #b08a32;
+    font-size: 58px;
+    font-weight: normal;
+    margin: 20px 0;
+    letter-spacing: 3px;
 }
 
 .hero p {
-    max-width: 580px;
+    color: #777;
+    font-size: 17px;
+}
 
+/* COLLECTIONS */
+.section {
+    max-width: 1200px;
     margin: auto;
-
-    color: #666;
-
-    font-size: 14px;
-
-    line-height: 1.8;
+    padding: 20px 30px 100px;
 }
 
-.hero-button {
-    display: inline-block;
-
-    margin-top: 32px;
-
-    padding: 14px 28px;
-
-    background: #202020;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    transition: 0.3s;
-}
-
-.hero-button:hover {
-    background: #b08a32;
-}
-
-
-/* =========================
-   COLLECTION
-========================= */
-
-.collection {
-    max-width: 1150px;
-
-    margin: auto;
-
-    padding: 70px 25px 100px;
-}
-
-.collection-title {
+.section-title {
     text-align: center;
-
     margin-bottom: 45px;
 }
 
-.collection-title small {
-    color: #b08a32;
-
-    font-size: 10px;
-
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
+.section-title h2 {
+    font-size: 38px;
+    font-weight: normal;
 }
 
-.collection-title h2 {
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 52px;
-
-    font-weight: 600;
-
-    margin-top: 8px;
+.section-title p {
+    margin-top: 12px;
+    color: #888;
 }
 
-.collection-title p {
-    color: #777;
-
-    font-size: 12px;
-
-    margin-top: 8px;
-}
-
-
-/* =========================
-   CARTES
-========================= */
-
-.category-grid {
+/* GRID */
+.collections {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
-    gap: 18px;
+    gap: 22px;
 }
 
 .category {
-    min-height: 245px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 3px;
-
+    background: #fff;
+    border: 1px solid #ddd8ce;
+    min-height: 240px;
+    padding: 30px;
+    cursor: pointer;
+    transition: 0.3s;
     text-decoration: none;
-
-    color: #202020;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.95),
-            rgba(224,217,201,0.72)
-        );
-
-    border: 1px solid rgba(160,125,45,0.22);
-
-    box-shadow:
-        0 15px 40px rgba(80,65,40,0.10);
-
-    padding: 25px;
-
+    color: inherit;
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
-
-    transition:
-        transform 0.35s,
-        box-shadow 0.35s,
-        border-color 0.35s;
-}
-
-.category::before {
-    content: "";
-
-    position: absolute;
-
-    width: 160px;
-    height: 160px;
-
-    border-radius: 50%;
-
-    background: rgba(190,150,65,0.12);
-
-    filter: blur(25px);
-
-    right: -70px;
-    top: -70px;
 }
 
 .category:hover {
-    transform: translateY(-8px);
-
-    border-color: rgba(176,138,50,0.65);
-
-    box-shadow:
-        0 25px 55px rgba(80,65,40,0.17);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-.number {
-    font-size: 10px;
-
-    letter-spacing: 3px;
-
+.category-number {
     color: #aaa;
+    font-size: 12px;
+    letter-spacing: 3px;
 }
 
 .category-icon {
-    font-size: 47px;
-
-    text-align: center;
-
-    margin-top: 8px;
-
-    filter: grayscale(15%);
-}
-
-.category-info {
-    position: relative;
-    z-index: 2;
+    font-size: 45px;
+    margin: 15px 0;
 }
 
 .category h3 {
-    font-family: 'Cormorant Garamond', serif;
-
     font-size: 27px;
-
-    font-weight: 600;
-
-    margin-bottom: 5px;
+    font-weight: normal;
 }
 
 .category p {
-    color: #777;
-
-    font-size: 10px;
-
-    letter-spacing: 0.5px;
+    color: #888;
+    margin-top: 8px;
+    font-size: 14px;
 }
 
-.arrow {
-    display: inline-block;
-
-    margin-top: 14px;
-
-    color: #a47d27;
-
-    font-size: 9px;
-
+.discover {
+    margin-top: 25px;
+    color: #a98b55;
     letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================
-   SIGNATURE
-========================= */
-
-.signature {
-    max-width: 900px;
-
-    margin: 0 auto 90px;
-
-    padding: 55px 25px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.8),
-            rgba(220,211,192,0.6)
-        );
-
-    border-top: 1px solid rgba(176,138,50,0.3);
-
-    border-bottom: 1px solid rgba(176,138,50,0.3);
-}
-
-.signature-small {
-    color: #b08a32;
-
-    font-size: 9px;
-
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
-}
-
-.signature h2 {
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 42px;
-
-    margin: 10px 0;
-}
-
-.signature p {
-    max-width: 600px;
-
-    margin: auto;
-
-    color: #777;
-
     font-size: 12px;
-
-    line-height: 1.8;
 }
 
+/* PRODUCTS */
+.products-page {
+    display: none;
+}
 
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background: #1c1c1b;
-
-    color: #aaa;
-
+.products-header {
     text-align: center;
+    padding: 70px 20px 45px;
+}
 
-    padding: 35px 20px;
+.products-header small {
+    color: #a98b55;
+    letter-spacing: 4px;
+}
 
-    font-size: 10px;
+.products-header h2 {
+    font-size: 48px;
+    font-weight: normal;
+    margin: 15px 0;
+}
 
+.products-header p {
+    color: #888;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 22px;
+    border: 1px solid #aaa;
+    text-decoration: none;
+    color: #222;
+    font-size: 13px;
     letter-spacing: 1px;
 }
 
-footer strong {
-    display: block;
-
-    color: #d4af58;
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 24px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 10px;
+.product-grid {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 30px 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
+.product {
+    background: white;
+    border: 1px solid #ddd8ce;
+    overflow: hidden;
+}
 
-/* =========================
-   TÉLÉPHONE
-========================= */
+.product-image {
+    height: 300px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 22px;
+}
+
+.product-info h3 {
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.product-info p {
+    color: #888;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid #ddd8ce;
+    text-align: center;
+    padding: 35px;
+    color: #888;
+    font-size: 13px;
+}
+
+/* MOBILE */
 @media (max-width: 800px) {
 
     header {
-        padding: 15px 20px;
-    }
-
-    nav {
-        gap: 12px;
-    }
-
-    nav a {
-        font-size: 9px;
+        padding: 18px 20px;
     }
 
     .logo {
-        font-size: 22px;
+        font-size: 18px;
     }
 
-    .hero {
-        min-height: 500px;
-    }
-
-    .hero h1 {
-        font-size: 55px;
-    }
-
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-@media (max-width: 500px) {
-
-    header {
-        flex-direction: column;
-
-        gap: 12px;
-    }
-
-    .hero {
-        min-height: 480px;
-
-        padding: 50px 20px;
+    nav a {
+        margin-left: 10px;
+        font-size: 10px;
     }
 
     .hero h1 {
-        font-size: 47px;
-
-        letter-spacing: 2px;
+        font-size: 38px;
     }
 
-    .category-grid {
+    .collections,
+    .product-grid {
         grid-template-columns: 1fr;
     }
 
-    .category {
-        min-height: 220px;
-    }
-
-    .collection-title h2 {
-        font-size: 42px;
+    .product-image {
+        height: 260px;
     }
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
-
     <div class="logo">
-        DYSON<span>1911</span>
-        STORE
+        DYSON<span>1911</span> STORE
     </div>
 
     <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#collection">Collection</a>
-        <a href="#maison">La Maison</a>
+        <a href="#" onclick="showCollections()">ACCUEIL</a>
+        <a href="#" onclick="showCollections()">COLLECTION</a>
     </nav>
-
 </header>
 
 
-<!-- =========================
-     ACCUEIL
-========================= -->
+<!-- PAGE COLLECTIONS -->
 
-<section class="hero" id="accueil">
+<main id="collectionsPage">
 
-    <div class="hero-content">
+    <section class="hero">
+        <small>L'univers Dyson1911</small>
 
-        <div class="hero-small">
-            Private Luxury Collection
+        <h1>Dyson1911 Store</h1>
+
+        <p>
+            Une sélection de créations et d'objets soigneusement choisis.
+        </p>
+    </section>
+
+
+    <section class="section">
+
+        <div class="section-title">
+            <h2>Nos Collections</h2>
+            <p>Explorez nos différents univers.</p>
         </div>
 
-        <h1>
-            DYSON<span>1911</span><br>
-            STORE
-        </h1>
 
-        <p>
-            Découvrez un univers dédié à l'élégance,
-            au style et aux pièces soigneusement sélectionnées.
+        <div class="collections">
+
+            <a class="category" href="#" onclick="showProducts('textile')">
+                <div>
+                    <div class="category-number">01</div>
+                    <div class="category-icon">👕</div>
+                    <h3>Textile</h3>
+                    <p>Vêtements et pièces premium</p>
+                </div>
+
+                <div class="discover">DÉCOUVRIR →</div>
+            </a>
+
+
+            <a class="category" href="#" onclick="showProducts('chaussures')">
+                <div>
+                    <div class="category-number">02</div>
+                    <div class="category-icon">👟</div>
+                    <h3>Chaussures</h3>
+                    <p>Silhouettes et créations sélectionnées</p>
+                </div>
+
+                <div class="discover">DÉCOUVRIR →</div>
+            </a>
+
+
+            <a class="category" href="#" onclick="showProducts('maroquinerie')">
+                <div>
+                    <div class="category-number">03</div>
+                    <div class="category-icon">👜</div>
+                    <h3>Maroquinerie</h3>
+                    <p>Sacs et accessoires raffinés</p>
+                </div>
+
+                <div class="discover">DÉCOUVRIR →</div>
+            </a>
+
+
+            <a class="category" href="#" onclick="showProducts('horlogerie')">
+                <div>
+                    <div class="category-number">04</div>
+                    <div class="category-icon">⌚</div>
+                    <h3>Horlogerie</h3>
+                    <p>Le temps avec distinction</p>
+                </div>
+
+                <div class="discover">DÉCOUVRIR →</div>
+            </a>
+
+
+            <a class="category" href="#" onclick="showProducts('bijoux')">
+                <div>
+                    <div class="category-number">05</div>
+                    <div class="category-icon">💎</div>
+                    <h3>Bijoux</h3>
+                    <p>Éclat et caractère</p>
+                </div>
+
+                <div class="discover">DÉCOUVRIR →</div>
+            </a>
+
+
+            <a class="category" href="#" onclick="showProducts('electronique')">
+                <div>
+                    <div class="category-number">06</div>
+                    <div class="category-icon">📱</div>
+                    <h3>Électronique</h3>
+                    <p>Technologie et objets premium</p>
+                </div>
+
+                <div class="discover">DÉCOUVRIR →</div>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- PAGE PRODUITS -->
+
+<main id="productsPage" class="products-page">
+
+    <section class="products-header">
+
+        <small id="productSubtitle">COLLECTION</small>
+
+        <h2 id="productTitle">Textile</h2>
+
+        <p id="productDescription">
+            Découvrez notre sélection.
         </p>
 
-        <a href="#collection" class="hero-button">
-            Découvrir la collection
+        <a href="#" class="back-button" onclick="showCollections()">
+            ← RETOUR AUX COLLECTIONS
         </a>
 
-    </div>
+    </section>
 
-</section>
 
+    <section class="product-grid" id="productGrid">
+    </section>
 
-<!-- =========================
-     COLLECTION
-========================= -->
+</main>
 
-<section class="collection" id="collection">
-
-    <div class="collection-title">
-
-        <small>
-            L'univers Dyson1911
-        </small>
-
-        <h2>
-            Nos Collections
-        </h2>
-
-        <p>
-            Explorez nos six univers.
-        </p>
-
-    </div>
-
-
-    <div class="category-grid">
-
-
-        <!-- TEXTILE -->
-
-        <a href="#" class="category">
-
-            <span class="number">
-                01
-            </span>
-
-            <div class="category-icon">
-    <img src="textile.jpg" alt="Textile">
-</div>
-
-            <div class="category-info">
-
-                <h3>
-                    Textile
-                </h3>
-
-                <p>
-                    Vêtements et pièces premium
-                </p>
-
-                <span class="arrow">
-                    Découvrir →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- CHAUSSURES -->
-
-        <a href="#" class="category">
-
-            <span class="number">
-                02
-            </span>
-
-            <div class="category-icon">
-                👟
-            </div>
-
-            <div class="category-info">
-
-                <h3>
-                    Chaussures
-                </h3>
-
-                <p>
-                    Silhouettes et créations sélectionnées
-                </p>
-
-                <span class="arrow">
-                    Découvrir →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- MAROQUINERIE -->
-
-        <a href="#" class="category">
-
-            <span class="number">
-                03
-            </span>
-
-            <div class="category-icon">
-                👜
-            </div>
-
-            <div class="category-info">
-
-                <h3>
-                    Maroquinerie
-                </h3>
-
-                <p>
-                    Sacs et accessoires raffinés
-                </p>
-
-                <span class="arrow">
-                    Découvrir →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- HORLOGERIE -->
-
-        <a href="#" class="category">
-
-            <span class="number">
-                04
-            </span>
-
-            <div class="category-icon">
-                ⌚
-            </div>
-
-            <div class="category-info">
-
-                <h3>
-                    Horlogerie
-                </h3>
-
-                <p>
-                    Le temps avec distinction
-                </p>
-
-                <span class="arrow">
-                    Découvrir →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- BIJOUX -->
-
-        <a href="#" class="category">
-
-            <span class="number">
-                05
-            </span>
-
-            <div class="category-icon">
-                💎
-            </div>
-
-            <div class="category-info">
-
-                <h3>
-                    Bijoux
-                </h3>
-
-                <p>
-                    Éclat et caractère
-                </p>
-
-                <span class="arrow">
-                    Découvrir →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- ÉLECTRONIQUE -->
-
-        <a href="#" class="category">
-
-            <span class="number">
-                06
-            </span>
-
-            <div class="category-icon">
-                📱
-            </div>
-
-            <div class="category-info">
-
-                <h3>
-                    Électronique
-                </h3>
-
-                <p>
-                    Technologie et objets premium
-                </p>
-
-                <span class="arrow">
-                    Découvrir →
-                </span>
-
-            </div>
-
-        </a>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     LA MAISON
-========================= -->
-
-<section class="signature" id="maison">
-
-    <div class="signature-small">
-        Dyson1911 Store
-    </div>
-
-    <h2>
-        L'art du détail.
-    </h2>
-
-    <p>
-        Une sélection pensée autour de l'élégance,
-        du caractère et d'une esthétique intemporelle.
-    </p>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
-
-    <strong>
-        DYSON1911 STORE
-    </strong>
-
-    © 2026 Dyson1911 Store — Tous droits réservés.
-
+    © 2026 Dyson1911 Store
 </footer>
 
+
+<script>
+
+const collections = {
+
+    textile: {
+        title: "Textile",
+        description: "Vêtements et pièces premium.",
+        products: [
+            {
+                name: "Pièce Signature",
+                description: "Collection textile sélectionnée.",
+                image: "textile-1.jpg"
+            },
+            {
+                name: "Essentiel",
+                description: "Style contemporain et élégant.",
+                image: "textile-2.jpg"
+            },
+            {
+                name: "Édition Privée",
+                description: "Une pièce pensée pour l'exclusivité.",
+                image: "textile-3.jpg"
+            }
+        ]
+    },
+
+    chaussures: {
+        title: "Chaussures",
+        description: "Silhouettes sélectionnées.",
+        products: [
+            {
+                name: "Modèle Signature",
+                description: "Une silhouette élégante.",
+                image: "chaussures-1.jpg"
+            },
+            {
+                name: "Édition Premium",
+                description: "Création contemporaine.",
+                image: "chaussures-2.jpg"
+            },
+            {
+                name: "Collection Privée",
+                description: "Design et caractère.",
+                image: "chaussures-3.jpg"
+            }
+        ]
+    },
+
+    maroquinerie: {
+        title: "Maroquinerie",
+        description: "Sacs et accessoires raffinés.",
+        products: [
+            {
+                name: "Sac Signature",
+                description: "Une pièce élégante.",
+                image: "maroquinerie-1.jpg"
+            },
+            {
+                name: "Sac Collection",
+                description: "Ligne exclusive.",
+                image: "maroquinerie-2.jpg"
+            },
+            {
+                name: "Accessoire",
+                description: "Finition raffinée.",
+                image: "maroquinerie-3.jpg"
+            }
+        ]
+    },
+
+    horlogerie: {
+        title: "Horlogerie",
+        description: "Le temps avec distinction.",
+        products: [
+            {
+                name: "Chronos",
+                description: "Design intemporel.",
+                image: "horlogerie-1.jpg"
+            },
+            {
+                name: "Édition Noire",
+                description: "Une présence élégante.",
+                image: "horlogerie-2.jpg"
+            },
+            {
+                name: "Signature",
+                description: "Précision et caractère.",
+                image: "horlogerie-3.jpg"
+            }
+        ]
+    },
+
+    bijoux: {
+        title: "Bijoux",
+        description: "Éclat et caractère.",
+        products: [
+            {
+                name: "Pièce Éclat",
+                description: "Une création raffinée.",
+                image: "bijoux-1.jpg"
+            },
+            {
+                name: "Signature",
+                description: "Élégance intemporelle.",
+                image: "bijoux-2.jpg"
+            },
+            {
+                name: "Collection Privée",
+                description: "Une pièce exclusive.",
+                image: "bijoux-3.jpg"
+            }
+        ]
+    },
+
+    electronique: {
+        title: "Électronique",
+        description: "Technologie et objets premium.",
+        products: [
+            {
+                name: "Objet Signature",
+                description: "Technologie contemporaine.",
+                image: "electronique-1.jpg"
+            },
+            {
+                name: "Édition Premium",
+                description: "Design et innovation.",
+                image: "electronique-2.jpg"
+            },
+            {
+                name: "Collection Tech",
+                description: "Performance et élégance.",
+                image: "electronique-3.jpg"
+            }
+        ]
+    }
+
+};
+
+
+function showProducts(category) {
+
+    const data = collections[category];
+
+    document.getElementById("collectionsPage").style.display = "none";
+    document.getElementById("productsPage").style.display = "block";
+
+    document.getElementById("productTitle").textContent = data.title;
+    document.getElementById("productSubtitle").textContent =
+        data.title.toUpperCase();
+
+    document.getElementById("productDescription").textContent =
+        data.description;
+
+    const grid = document.getElementById("productGrid");
+
+    grid.innerHTML = "";
+
+    data.products.forEach(product => {
+
+        grid.innerHTML += `
+            <article class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        onerror="this.style.display='none'"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>${product.name}</h3>
+
+                    <p>${product.description}</p>
+
+                </div>
+
+            </article>
+        `;
+
+    });
+
+    window.scrollTo(0, 0);
+}
+
+
+function showCollections() {
+
+    document.getElementById("productsPage").style.display = "none";
+
+    document.getElementById("collectionsPage").style.display = "block";
+
+    window.scrollTo(0, 0);
+}
+
+</script>
 
 </body>
 </html>
