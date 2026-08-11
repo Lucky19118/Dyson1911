@@ -1,223 +1,202 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dyson1911 Store</title>
-
+<title>DYSON1911 STORE</title>
 <style>
-* {
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --gold:#d8b56a;--gold2:#f0d89a;--black:#070707;--panel:#11110f;
+  --line:rgba(216,181,106,.22);--muted:#a8a59e;
 }
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:#f7f5ef;font-family:Inter,Arial,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#fff 0.6px,transparent .6px);background-size:5px 5px;mask-image:linear-gradient(to bottom,black,transparent 75%);z-index:-1}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0a0a0a;
-  color: white;
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;height:82px;z-index:50;display:flex;align-items:center;background:rgba(7,7,7,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:700;letter-spacing:4px;color:var(--gold2)}
+.logo small{display:block;font-family:Inter;font-size:8px;letter-spacing:4px;color:#aaa;text-align:center;margin-top:-5px}
+.links{display:flex;gap:34px;font-size:13px;text-transform:uppercase;letter-spacing:2px}
+.links a{color:#ddd;transition:.25s}.links a:hover{color:var(--gold2)}
+.nav-actions{display:flex;gap:10px}
+.circle{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-size:15px}
+
+/* HERO */
+.hero{min-height:820px;padding-top:82px;display:grid;place-items:center;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(216,181,106,.18),transparent 32%),linear-gradient(180deg,transparent 60%,var(--black))}
+.hero-bg{position:absolute;inset:0;background:
+ radial-gradient(ellipse at 50% 42%,rgba(255,255,255,.08),transparent 30%),
+ radial-gradient(ellipse at 20% 55%,rgba(216,181,106,.08),transparent 25%),
+ linear-gradient(125deg,#090909 0%,#161510 48%,#070707 100%);
 }
+.hero-content{position:relative;z-index:2;text-align:center;padding:70px 20px}
+.kicker{color:var(--gold);font-size:11px;letter-spacing:7px;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(62px,10vw,132px);line-height:.82;margin:0;letter-spacing:8px;font-weight:600}
+.hero h1 span{color:var(--gold2)}
+.hero p{max-width:600px;margin:30px auto;color:#c9c6bd;line-height:1.8;font-size:15px}
+.cta{display:inline-flex;gap:10px;align-items:center;background:var(--gold);color:#090909;padding:16px 28px;border-radius:2px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-size:12px;transition:.25s}
+.cta:hover{background:var(--gold2);transform:translateY(-2px)}
+.cta.alt{background:transparent;color:#eee;border:1px solid var(--line);margin-left:10px}
+.scroll{position:absolute;bottom:30px;z-index:3;color:#888;font-size:9px;letter-spacing:4px;text-transform:uppercase}
 
-header {
-  padding: 25px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #292929;
-  background: #0a0a0a;
+/* TRUST */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+.trust div+div{border-left:1px solid var(--line)}
+.trust strong{display:block;color:#eee;font-size:12px;letter-spacing:1px}
+.trust span{font-size:10px;color:#888;display:block;margin-top:5px}
+
+/* SECTION */
+.section{padding:110px 0}
+.section-head{text-align:center;margin-bottom:55px}
+.eyebrow{color:var(--gold);font-size:10px;letter-spacing:5px;text-transform:uppercase}
+.section h2{font-family:"Cormorant Garamond",serif;font-size:54px;margin:10px 0 12px;font-weight:600}
+.section-head p{color:#8f8d87;font-size:13px}
+
+/* CATEGORIES */
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cat{height:310px;border:1px solid var(--line);position:relative;overflow:hidden;background:#111}
+.cat:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(216,181,106,.15),transparent 45%,rgba(255,255,255,.03))}
+.cat:nth-child(2):before{background:linear-gradient(210deg,rgba(255,255,255,.10),transparent 50%)}
+.cat:nth-child(3):before{background:linear-gradient(140deg,rgba(100,100,100,.16),transparent 50%)}
+.cat:nth-child(4):before{background:linear-gradient(220deg,rgba(216,181,106,.12),transparent 55%)}
+.cat .number{position:absolute;top:18px;left:18px;color:#666;font-size:10px;letter-spacing:2px}
+.cat .symbol{position:absolute;top:48px;left:50%;transform:translateX(-50%);font-size:65px;filter:grayscale(1);opacity:.8}
+.cat-info{position:absolute;bottom:0;left:0;right:0;padding:28px 22px;background:linear-gradient(transparent,rgba(0,0,0,.95))}
+.cat h3{font-family:"Cormorant Garamond",serif;font-size:29px;margin:0 0 6px}
+.cat p{font-size:11px;color:#999;margin:0 0 16px}
+.view{font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+
+/* PRODUCTS */
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.product{background:var(--panel);border:1px solid var(--line);position:relative;overflow:hidden}
+.product-img{height:330px;display:grid;place-items:center;background:
+ radial-gradient(circle at 50% 38%,rgba(216,181,106,.20),transparent 26%),
+ linear-gradient(135deg,#181714,#080808)}
+.product-img span{font-size:105px;filter:grayscale(1) contrast(1.1);opacity:.82}
+.badge{position:absolute;top:14px;left:14px;background:var(--gold);color:#090909;padding:6px 9px;font-size:8px;letter-spacing:1.5px;font-weight:700}
+.product-body{padding:22px}
+.product-body h3{font-family:"Cormorant Garamond",serif;font-size:27px;margin:0 0 6px}
+.product-body p{color:#898781;font-size:11px;margin:0 0 18px}
+.product-bottom{display:flex;justify-content:space-between;align-items:center}
+.discover{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);border-bottom:1px solid var(--gold);padding-bottom:5px}
+
+/* STORY */
+.story{display:grid;grid-template-columns:1fr 1fr;min-height:500px}
+.story-visual{background:linear-gradient(135deg,#201d15,#0a0a09 70%);border:1px solid var(--line);display:grid;place-items:center;font-family:"Cormorant Garamond";font-size:110px;color:var(--gold);font-style:italic}
+.story-copy{padding:70px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.story-copy h2{text-align:left;margin-top:10px}
+.story-copy p{color:#999;line-height:1.9;font-size:13px}
+.signature{font-family:"Cormorant Garamond";font-size:30px;color:var(--gold);margin-top:30px}
+
+/* NEWSLETTER */
+.news{padding:80px 20px;text-align:center;border:1px solid var(--line);background:linear-gradient(120deg,#11100d,#0a0a0a)}
+.news h2{font-family:"Cormorant Garamond";font-size:48px;margin:8px}
+.news p{color:#888;font-size:12px}
+.form{display:flex;max-width:500px;margin:25px auto 0}
+.form input{flex:1;background:#070707;border:1px solid #333;padding:15px;color:white;outline:none}
+.form button{border:0;background:var(--gold);padding:0 20px;font-weight:700}
+
+/* FOOTER */
+footer{padding:55px 0 25px;border-top:1px solid var(--line);margin-top:100px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer-title{font-family:"Cormorant Garamond";font-size:25px;color:var(--gold)}
+footer h4{font-size:10px;letter-spacing:2px;color:#eee}
+footer a,footer p{display:block;color:#777;font-size:11px;margin:10px 0}
+.copy{text-align:center;color:#555;font-size:9px;margin-top:50px;padding-top:20px;border-top:1px solid #222}
+
+/* MOBILE */
+@media(max-width:850px){
+ .links{display:none}.categories{grid-template-columns:1fr 1fr}.products{grid-template-columns:1fr 1fr}
+ .story{grid-template-columns:1fr}.story-copy{padding:45px 25px}.footer-grid{grid-template-columns:1fr 1fr}
 }
-
-.logo {
-  font-size: 25px;
-  font-weight: bold;
-  letter-spacing: 3px;
-  color: #d4af37;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 25px;
-}
-
-.hero {
-  text-align: center;
-  padding: 90px 20px;
-  background: linear-gradient(#111,#050505);
-}
-
-.hero h1 {
-  font-size: 55px;
-  margin: 0;
-  letter-spacing: 6px;
-}
-
-.hero p {
-  color: #d4af37;
-  font-size: 20px;
-}
-
-.section {
-  padding: 50px 25px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.section h2 {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 40px;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 25px;
-}
-
-.product {
-  background: #151515;
-  border: 1px solid #292929;
-  border-radius: 12px;
-  padding: 30px;
-  text-align: center;
-}
-
-.product-icon {
-  font-size: 65px;
-  margin-bottom: 20px;
-}
-
-.product h3 {
-  font-size: 22px;
-}
-
-.description {
-  color: #aaa;
-}
-
-.price {
-  color: #d4af37;
-  font-size: 23px;
-  font-weight: bold;
-  margin: 20px;
-}
-
-button {
-  background: #d4af37;
-  color: #000;
-  border: none;
-  padding: 13px 28px;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #f0d66d;
-}
-
-footer {
-  margin-top: 50px;
-  padding: 35px;
-  text-align: center;
-  border-top: 1px solid #292929;
-  color: #888;
-}
-
-@media (max-width: 600px) {
-  header {
-    padding: 20px;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  nav a {
-    margin: 0 8px;
-  }
-
-  .hero h1 {
-    font-size: 38px;
-  }
+@media(max-width:550px){
+ .hero{min-height:700px}.hero h1{font-size:58px;letter-spacing:4px}.cta.alt{display:none}
+ .trust-grid{grid-template-columns:1fr}.trust div+div{border-left:0;border-top:1px solid var(--line);margin-top:15px;padding-top:15px}
+ .categories,.products{grid-template-columns:1fr}.section{padding:75px 0}.section h2{font-size:43px}
+ .footer-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
-
 <body>
 
-<header>
-
-<div class="logo">
-DYSON1911 STORE
-</div>
-
-<nav>
-<a href="#">Accueil</a>
-<a href="#produits">Produits</a>
-<a href="#contact">Contact</a>
+<nav class="nav">
+ <div class="container nav-inner">
+  <a class="logo" href="#accueil">DYSON1911 STORE<small>PRIVATE LUXURY COLLECTION</small></a>
+  <div class="links">
+   <a href="#accueil">Accueil</a><a href="#collection">Collection</a><a href="#selection">Sélection</a><a href="#maison">La Maison</a>
+  </div>
+  <div class="nav-actions"><div class="circle">⌕</div><div class="circle">♡</div><div class="circle">🛍</div></div>
+ </div>
 </nav>
 
+<header class="hero" id="accueil">
+ <div class="hero-bg"></div>
+ <div class="hero-content">
+  <div class="kicker">Maison de luxe · Paris · 2026</div>
+  <h1>DYSON<span>1911</span><br>STORE</h1>
+  <p>Une sélection confidentielle de pièces d'exception, choisies pour leur élégance, leur caractère et leur finition.</p>
+  <a class="cta" href="#collection">Explorer la collection</a>
+  <a class="cta alt" href="#maison">Découvrir la maison</a>
+ </div>
+ <div class="scroll">↓ &nbsp; découvrir</div>
 </header>
 
-<section class="hero">
+<div class="trust"><div class="container trust-grid">
+ <div><strong>EXPÉDITION SOIGNÉE</strong><span>Préparation premium</span></div>
+ <div><strong>SÉLECTION EXCLUSIVE</strong><span>Pièces choisies avec soin</span></div>
+ <div><strong>SERVICE PRIVÉ</strong><span>Une attention personnalisée</span></div>
+</div></div>
 
-<h1>DYSON1911 STORE</h1>
-
-<p>L'élégance. Le prestige. L'excellence.</p>
-
+<section class="section" id="collection">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">L'univers Dyson1911</div><h2>La Collection</h2><p>Explorez nos quatre univers emblématiques.</p></div>
+  <div class="categories">
+   <a class="cat" href="#selection"><span class="number">01</span><div class="symbol">👜</div><div class="cat-info"><h3>Maroquinerie</h3><p>Sacs et pièces iconiques</p><span class="view">Voir la sélection →</span></div></a>
+   <a class="cat" href="#selection"><span class="number">02</span><div class="symbol">⌚</div><div class="cat-info"><h3>Horlogerie</h3><p>Le temps avec distinction</p><span class="view">Voir la sélection →</span></div></a>
+   <a class="cat" href="#selection"><span class="number">03</span><div class="symbol">👟</div><div class="cat-info"><h3>Chaussures</h3><p>Silhouettes contemporaines</p><span class="view">Voir la sélection →</span></div></a>
+   <a class="cat" href="#selection"><span class="number">04</span><div class="symbol">💎</div><div class="cat-info"><h3>Bijoux</h3><p>Éclat et caractère</p><span class="view">Voir la sélection →</span></div></a>
+  </div>
+ </div>
 </section>
 
-<section class="section" id="produits">
-
-<h2>Notre Collection</h2>
-
-<div class="products">
-
-<div class="product">
-<div class="product-icon">👜</div>
-<h3>Sac de luxe</h3>
-<p class="description">Collection exclusive</p>
-<div class="price">1 500 €</div>
-<button>Acheter</button>
-</div>
-
-<div class="product">
-<div class="product-icon">⌚</div>
-<h3>Montre de luxe</h3>
-<p class="description">Design exceptionnel</p>
-<div class="price">3 000 €</div>
-<button>Acheter</button>
-</div>
-
-<div class="product">
-<div class="product-icon">👟</div>
-<h3>Chaussures</h3>
-<p class="description">Collection premium</p>
-<div class="price">800 €</div>
-<button>Acheter</button>
-</div>
-
-<div class="product">
-<div class="product-icon">💎</div>
-<h3>Bijoux</h3>
-<p class="description">Élégance intemporelle</p>
-<div class="price">2 000 €</div>
-<button>Acheter</button>
-</div>
-
-</div>
-
+<section class="section" id="selection" style="padding-top:20px">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Édition privée</div><h2>Pièces à découvrir</h2><p>Des créations présentées sans prix pour privilégier l'expérience et la découverte.</p></div>
+  <div class="products">
+   <article class="product"><div class="product-img"><span>👜</span><span class="badge">NOUVEAUTÉ</span></div><div class="product-body"><h3>Le Signature</h3><p>Sac · Ligne exclusive</p><div class="product-bottom"><span class="discover">Découvrir</span>→</div></div></article>
+   <article class="product"><div class="product-img"><span>⌚</span><span class="badge">ÉDITION PRIVÉE</span></div><div class="product-body"><h3>Chronos Noir</h3><p>Montre · Acier &amp; cuir</p><div class="product-bottom"><span class="discover">Découvrir</span>→</div></div></article>
+   <article class="product"><div class="product-img"><span>👟</span><span class="badge">SÉLECTION</span></div><div class="product-body"><h3>Élite</h3><p>Chaussures · Collection premium</p><div class="product-bottom"><span class="discover">Découvrir</span>→</div></div></article>
+  </div>
+ </div>
 </section>
 
-<footer id="contact">
+<section class="section" id="maison">
+ <div class="container story">
+  <div class="story-visual">D<span>19</span>11</div>
+  <div class="story-copy"><div class="eyebrow">Notre histoire</div><h2>L'art du détail.</h2><p>DYSON1911 STORE imagine un univers où chaque pièce raconte une histoire. Notre sélection associe lignes intemporelles, matières raffinées et détails contemporains.</p><p>Notre ambition : proposer une expérience digitale élégante, simple et mémorable.</p><div class="signature">Dyson1911</div></div>
+ </div>
+</section>
 
-DYSON1911 STORE
+<div class="container"><div class="news">
+ <div class="eyebrow">Cercle privé</div><h2>Entrez dans l'univers Dyson1911</h2><p>Recevez nos nouvelles collections et sélections privées.</p>
+ <form class="form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Merci ✓'"><input type="email" placeholder="Votre adresse e-mail" required><button>S'inscrire</button></form>
+ </div></div>
 
-<br><br>
-
-© 2026 — Tous droits réservés
-
+<footer>
+ <div class="container footer-grid">
+  <div><div class="footer-title">DYSON1911 STORE</div><p>L'élégance. Le prestige. L'excellence.</p></div>
+  <div><h4>COLLECTION</h4><a href="#collection">Maroquinerie</a><a href="#collection">Horlogerie</a><a href="#collection">Chaussures</a><a href="#collection">Bijoux</a></div>
+  <div><h4>MAISON</h4><a href="#maison">Notre histoire</a><a href="#">Contact privé</a><a href="#">Livraison</a></div>
+  <div><h4>SOCIAL</h4><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Pinterest</a></div>
+ </div>
+ <div class="container copy">© 2026 DYSON1911 STORE · Tous droits réservés.</div>
 </footer>
-
 </body>
 </html>
