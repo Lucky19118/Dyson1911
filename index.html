@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -13,224 +13,198 @@
     }
 
     body {
-      font-family: Georgia, "Times New Roman", serif;
-      background:
-        radial-gradient(circle at 20% 10%, rgba(212,175,55,.12), transparent 25%),
-        radial-gradient(circle at 80% 70%, rgba(255,255,255,.05), transparent 25%),
-        #090909;
-      color: #f5f1e7;
+      font-family: Arial, sans-serif;
+      background: #0b0b0d;
+      color: white;
       min-height: 100vh;
     }
 
     header {
-      border-bottom: 1px solid rgba(212,175,55,.35);
-      padding: 18px 5%;
+      padding: 22px 6%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      align-items: center;
+      border-bottom: 1px solid #242428;
+      background: rgba(11,11,13,0.95);
       position: sticky;
       top: 0;
-      background: rgba(9,9,9,.94);
-      backdrop-filter: blur(10px);
       z-index: 10;
     }
 
     .logo {
-      color: #d4af37;
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      line-height: 1.05;
-      text-transform: uppercase;
-    }
-
-    .logo small {
-      display: block;
-      color: #aaa;
-      font-size: 8px;
-      letter-spacing: 3px;
-      margin-top: 5px;
-    }
-
-    nav {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-    }
-
-    nav a {
-      color: #eee;
-      text-decoration: none;
-      font-size: 13px;
+      font-size: 22px;
+      font-weight: 700;
       letter-spacing: 1px;
-      text-transform: uppercase;
     }
 
-    nav a:hover {
-      color: #d4af37;
+    .logo span {
+      color: #bdbdbd;
+    }
+
+    .cart {
+      background: white;
+      color: black;
+      border: none;
+      padding: 9px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     .hero {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 65px 5% 45px;
       text-align: center;
-    }
-
-    .eyebrow {
-      color: #d4af37;
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
+      padding: 65px 20px 45px;
+      background:
+        radial-gradient(circle at top, #29292e 0%, #111114 40%, #0b0b0d 75%);
     }
 
     .hero h1 {
-      font-size: clamp(38px, 7vw, 72px);
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
+      font-size: clamp(34px, 7vw, 64px);
+      margin-bottom: 12px;
     }
 
     .hero p {
-      color: #bbb;
+      color: #a8a8ad;
       font-size: 15px;
-      line-height: 1.7;
-      max-width: 650px;
-      margin: auto;
     }
 
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 25px 5% 65px;
+    .collections {
+      padding: 28px 6%;
     }
 
-    .section-title {
+    .collections h2 {
       text-align: center;
-      color: #d4af37;
+      margin-bottom: 22px;
       font-size: 25px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 28px;
     }
 
-    .collection {
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .category {
+      border: 1px solid #333339;
+      background: #151518;
+      color: white;
+      padding: 11px 17px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .category:hover,
+    .category.active {
+      background: white;
+      color: black;
+      border-color: white;
+    }
+
+    .products {
+      padding: 20px 6% 60px;
+    }
+
+    .grid {
+      max-width: 1000px;
+      margin: auto;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
     .card {
-      min-height: 260px;
-      border: 1px solid rgba(212,175,55,.45);
-      background: linear-gradient(145deg, #171717, #0d0d0d);
-      padding: 20px 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform .25s, border-color .25s;
+      background: #151518;
+      border: 1px solid #252529;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: 0.25s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: #d4af37;
+      transform: translateY(-4px);
+      border-color: #55555b;
     }
 
-    .number {
-      color: #777;
-      font-size: 11px;
-      letter-spacing: 2px;
+    .image {
+      height: 180px;
+      background: linear-gradient(135deg, #29292e, #111114);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
     }
 
-    .icon {
-      font-size: 42px;
-      text-align: center;
-      margin: 20px 0;
+    .info {
+      padding: 16px;
     }
 
-    .card h3 {
-      font-size: 17px;
+    .info h3 {
+      font-size: 16px;
       margin-bottom: 7px;
     }
 
-    .card p {
-      color: #999;
-      font-size: 12px;
-      line-height: 1.5;
-      margin-bottom: 16px;
+    .info p {
+      color: #909096;
+      font-size: 13px;
     }
 
-    .discover {
-      color: #d4af37;
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .about {
-      text-align: center;
-      border-top: 1px solid rgba(212,175,55,.2);
-      padding-top: 45px;
-    }
-
-    .about p {
-      max-width: 650px;
-      margin: auto;
-      color: #aaa;
-      line-height: 1.8;
-      font-size: 14px;
+    .add {
+      width: 100%;
+      margin-top: 14px;
+      padding: 10px;
+      border: none;
+      border-radius: 9px;
+      background: white;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     footer {
-      border-top: 1px solid rgba(212,175,55,.25);
+      border-top: 1px solid #242428;
       text-align: center;
       padding: 25px;
-      color: #777;
-      font-size: 11px;
-      letter-spacing: 2px;
+      color: #77777d;
+      font-size: 13px;
     }
 
-    @media (max-width: 900px) {
-      .collection {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 650px) {
+    @media (max-width: 750px) {
       header {
-        flex-direction: column;
-        padding: 15px;
+        padding: 18px 5%;
       }
 
-      nav {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      nav a {
-        font-size: 10px;
-      }
-
-      .hero {
-        padding-top: 45px;
-      }
-
-      .collection {
+      .grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .card {
-        min-height: 235px;
+      .image {
+        height: 140px;
       }
     }
 
-    @media (max-width: 420px) {
-      .collection {
-        grid-template-columns: 1fr;
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .image {
+        height: 120px;
+        font-size: 36px;
+      }
+
+      .info {
+        padding: 12px;
+      }
+
+      .info h3 {
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 45px 15px 35px;
       }
     }
   </style>
@@ -239,107 +213,137 @@
 <body>
 
   <header>
-    <div class="logo">
-      Dyson1911<br>Store
-      <small>Private Luxury Collection</small>
-    </div>
-
-    <nav>
-      <a href="#accueil">Accueil</a>
-      <a href="#collection">Collection</a>
-      <a href="#selection">Sélection</a>
-      <a href="#maison">La maison</a>
-    </nav>
+    <div class="logo">Dyson1911 <span>Store</span></div>
+    <button class="cart">Panier <span id="count">0</span></button>
   </header>
 
-  <main>
-    <section class="hero" id="accueil">
-      <div class="eyebrow">Dyson1911 Store</div>
-      <h1>Dyson1911 Store</h1>
-      <p>
-        Des créations sélectionnées avec soin, pensées autour du style,
-        de l'élégance et du prestige.
-      </p>
-    </section>
+  <section class="hero">
+    <h1>Dyson1911 Store</h1>
+    <p>Découvrez notre sélection</p>
+  </section>
 
-    <section id="collection">
-      <h2 class="section-title">Notre Collection</h2>
+  <section class="collections">
+    <h2>Collections</h2>
 
-      <div class="collection">
+    <div class="categories">
+      <button class="category active" onclick="filterProducts('all', this)">
+        Tout
+      </button>
 
-        <article class="card">
-          <span class="number">01</span>
-          <div class="icon">👜</div>
-          <div>
-            <h3>Maroquinerie</h3>
-            <p>Sacs et pièces iconiques.</p>
-            <a class="discover" href="#selection">Découvrir →</a>
-          </div>
-        </article>
+      <button class="category" onclick="filterProducts('maroquinerie', this)">
+        Maroquinerie
+      </button>
 
-        <article class="card">
-          <span class="number">02</span>
-          <div class="icon">⌚</div>
-          <div>
-            <h3>Horlogerie</h3>
-            <p>Le temps avec distinction.</p>
-            <a class="discover" href="#selection">Découvrir →</a>
-          </div>
-        </article>
+      <button class="category" onclick="filterProducts('horlogerie', this)">
+        Horlogerie
+      </button>
 
-        <article class="card">
-          <span class="number">03</span>
-          <div class="icon">👟</div>
-          <div>
-            <h3>Chaussures</h3>
-            <p>Silhouettes contemporaines.</p>
-            <a class="discover" href="#selection">Découvrir →</a>
-          </div>
-        </article>
+      <button class="category" onclick="filterProducts('chaussures', this)">
+        Chaussures
+      </button>
 
-        <article class="card">
-          <span class="number">04</span>
-          <div class="icon">💎</div>
-          <div>
-            <h3>Bijoux</h3>
-            <p>Éclat et caractère.</p>
-            <a class="discover" href="#selection">Découvrir →</a>
-          </div>
-        </article>
+      <button class="category" onclick="filterProducts('bijoux', this)">
+        Bijoux
+      </button>
 
-        <article class="card">
-          <span class="number">05</span>
-          <div class="icon">🧥</div>
-          <div>
-            <h3>Textile</h3>
-            <p>Vêtements et pièces premium.</p>
-            <a class="discover" href="#selection">Découvrir →</a>
-          </div>
-        </article>
+      <button class="category" onclick="filterProducts('textile', this)">
+        Textile
+      </button>
 
+      <button class="category" onclick="filterProducts('electronique', this)">
+        Électronique
+      </button>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="grid">
+
+      <div class="card" data-category="maroquinerie">
+        <div class="image">👜</div>
+        <div class="info">
+          <h3>Maroquinerie</h3>
+          <p>Sélection exclusive</p>
+          <button class="add" onclick="addCart()">Ajouter</button>
+        </div>
       </div>
-    </section>
 
-    <section class="about" id="maison">
-      <h2 class="section-title">La Maison</h2>
-      <p>
-        Dyson1911 Store propose une sélection élégante et contemporaine.
-        Notre univers privilégie la qualité, le détail et une présentation
-        sobre inspirée des maisons de luxe.
-      </p>
-    </section>
+      <div class="card" data-category="horlogerie">
+        <div class="image">⌚</div>
+        <div class="info">
+          <h3>Horlogerie</h3>
+          <p>Montres & accessoires</p>
+          <button class="add" onclick="addCart()">Ajouter</button>
+        </div>
+      </div>
 
-    <section id="selection">
-      <h2 class="section-title">Sélection</h2>
-      <p style="text-align:center;color:#999;line-height:1.7;">
-        Découvrez prochainement notre sélection de pièces.
-      </p>
-    </section>
-  </main>
+      <div class="card" data-category="chaussures">
+        <div class="image">👟</div>
+        <div class="info">
+          <h3>Chaussures</h3>
+          <p>Modèles sélectionnés</p>
+          <button class="add" onclick="addCart()">Ajouter</button>
+        </div>
+      </div>
+
+      <div class="card" data-category="bijoux">
+        <div class="image">💎</div>
+        <div class="info">
+          <h3>Bijoux</h3>
+          <p>Pièces élégantes</p>
+          <button class="add" onclick="addCart()">Ajouter</button>
+        </div>
+      </div>
+
+      <div class="card" data-category="textile">
+        <div class="image">👕</div>
+        <div class="info">
+          <h3>Textile</h3>
+          <p>Vêtements & accessoires</p>
+          <button class="add" onclick="addCart()">Ajouter</button>
+        </div>
+      </div>
+
+      <div class="card" data-category="electronique">
+        <div class="image">🎧</div>
+        <div class="info">
+          <h3>Électronique</h3>
+          <p>Technologie & accessoires</p>
+          <button class="add" onclick="addCart()">Ajouter</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <footer>
     © 2026 Dyson1911 Store — Tous droits réservés
   </footer>
+
+  <script>
+    let cartCount = 0;
+
+    function addCart() {
+      cartCount++;
+      document.getElementById("count").textContent = cartCount;
+    }
+
+    function filterProducts(category, button) {
+      const cards = document.querySelectorAll(".card");
+      const buttons = document.querySelectorAll(".category");
+
+      buttons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      cards.forEach(card => {
+        if (category === "all" || card.dataset.category === category) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
